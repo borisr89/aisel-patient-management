@@ -13,13 +13,13 @@ import {
   UseGuards,
 } from '@nestjs/common';
 
-import { Roles } from '../../auth/auth/decorators/roles.decorator';
-import { Role } from '../../auth/enums/role.enum';
-import { JwtAuthGuard } from '../../auth/guards/jwt-auth/jwt-auth.guard';
-import { RolesGuard } from '../../auth/guards/roles/roles.guard';
-import { CreatePatientDto } from '../dto/create-patient.dto';
-import { PatientsQueryDto } from '../dto/patients-query.dto';
-import { UpdatePatientDto } from '../dto/update-patient.dto';
+import { Roles } from '../auth/decorators/roles.decorator';
+import { Role } from '../auth/enums/role.enum';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth/jwt-auth.guard';
+import { RolesGuard } from '../auth/guards/roles/roles.guard';
+import { CreatePatientDto } from './dto/create-patient.dto';
+import { PatientsQueryDto } from './dto/patients-query.dto';
+import { UpdatePatientDto } from './dto/update-patient.dto';
 import { PatientsService } from './patients.service';
 
 @Controller('patients')

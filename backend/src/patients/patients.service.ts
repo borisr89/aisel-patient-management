@@ -1,15 +1,15 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 
-import { type Patient, Prisma } from '../../generated/prisma/client';
-import { PrismaService } from '../../prisma/prisma/prisma.service';
-import { CreatePatientDto } from '../dto/create-patient.dto';
+import { type Patient, Prisma } from '../generated/prisma/client';
+import { PrismaService } from './../prisma/prisma.service';
+import { CreatePatientDto } from './dto/create-patient.dto';
 import {
   PatientSortBy,
   PatientsQueryDto,
   SortOrder,
-} from '../dto/patients-query.dto';
-import { UpdatePatientDto } from '../dto/update-patient.dto';
-import { PaginatedPatientsResponse } from '../interfaces/paginated-patients-response.interface';
+} from './dto/patients-query.dto';
+import { UpdatePatientDto } from './dto/update-patient.dto';
+import { PaginatedPatientsResponse } from './interfaces/paginated-patients-response.interface';
 
 @Injectable()
 export class PatientsService {

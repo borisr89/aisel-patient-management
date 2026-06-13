@@ -8,7 +8,7 @@ import { JwtService } from '@nestjs/jwt';
 import { Request } from 'express';
 
 import { Role } from '../../enums/role.enum';
-import { JwtPayload } from '../../auth/interfaces/jwt-payload.interface';
+import { JwtPayload } from '../../interfaces/jwt-payload.interface';
 
 type AuthenticatedRequest = Request & {
   user?: JwtPayload;

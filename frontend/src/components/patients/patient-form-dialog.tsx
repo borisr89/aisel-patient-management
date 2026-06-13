@@ -84,12 +84,6 @@ export function PatientFormDialog({
     form.reset(EMPTY_VALUES);
   }, [form, open, patient]);
 
-  async function handleSubmit(
-    values: PatientFormValues,
-  ): Promise<void> {
-    await onSubmit(values);
-  }
-
   function handleOpenChange(
     nextOpen: boolean,
   ): void {
@@ -122,9 +116,7 @@ export function PatientFormDialog({
 
         <form
           id="patient-form"
-          onSubmit={form.handleSubmit(
-            handleSubmit,
-          )}
+          onSubmit={form.handleSubmit(onSubmit)}
           noValidate
         >
           <FieldGroup>

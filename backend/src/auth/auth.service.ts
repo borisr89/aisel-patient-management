@@ -2,11 +2,12 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { compare } from 'bcryptjs';
 
-import { Role as UserRole } from '../../generated/prisma/enums';
-import { UsersService } from '../../users/users/users.service';
+import { Role as UserRole } from '../generated/prisma/enums';
+import { UsersService } from '../users/users.service';
 import { LoginDto } from './dto/login.dto';
-import { Role } from '../enums/role.enum';
+import { Role } from './enums/role.enum';
 import { JwtPayload } from './interfaces/jwt-payload.interface';
+import { LoginResponse } from './interfaces/login-response.interface';
 
 @Injectable()
 export class AuthService {
@@ -15,7 +16,7 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  async login(dto: LoginDto) {
+  async login(dto: LoginDto): Promise<LoginResponse> {
     const user = await this.usersService.findByEmail(dto.email);
 
     if (!user) {

@@ -7,7 +7,7 @@ import request from 'supertest';
 import { AppModule } from '../src/app.module';
 import { configureApp } from '../src/configure-app';
 import { Role } from '../src/generated/prisma/enums';
-import { PrismaService } from '../src/prisma/prisma/prisma.service';
+import { PrismaService } from '../src/prisma/prisma.service';
 
 describe('Patients API', () => {
   let app: INestApplication;

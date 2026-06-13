@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { useAuth } from '@/components/auth/auth-provider';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { ROLE } from '@/types/auth';
 
 export function AppHeader() {
   const router = useRouter();
@@ -43,7 +44,7 @@ export function AppHeader() {
 
             <Badge
               variant={
-                session.user.role === 'admin'
+                session.user.role === ROLE.ADMIN
                   ? 'default'
                   : 'secondary'
               }

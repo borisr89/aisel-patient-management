@@ -2,9 +2,9 @@ import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { Request } from 'express';
 
-import { ROLES_KEY } from '../../auth/decorators/roles.decorator';
+import { ROLES_KEY } from '../../decorators/roles.decorator';
 import { Role } from '../../enums/role.enum';
-import { JwtPayload } from '../../auth/interfaces/jwt-payload.interface';
+import { JwtPayload } from '../../interfaces/jwt-payload.interface';
 
 type AuthenticatedRequest = Request & {
   user?: JwtPayload;

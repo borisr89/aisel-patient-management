@@ -1,12 +1,12 @@
 import { NotFoundException } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { PrismaService } from '../../prisma/prisma/prisma.service';
+import { PrismaService } from '../prisma/prisma.service';
 import {
   PatientSortBy,
   PatientsQueryDto,
   SortOrder,
-} from '../dto/patients-query.dto';
+} from './dto/patients-query.dto';
 import { PatientsService } from './patients.service';
 
 describe('PatientsService', () => {
