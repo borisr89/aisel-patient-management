@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import type { ApiErrorBody } from '@/types/api';
 
 export class ApiError extends Error {

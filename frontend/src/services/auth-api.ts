@@ -5,10 +5,15 @@ import type {
 } from '@/types/auth';
 
 export const authApi = {
-  login(payload: LoginRequest): Promise<LoginResponse> {
-    return apiRequest<LoginResponse>('/auth/login', {
-      method: 'POST',
-      body: JSON.stringify(payload),
-    });
+  login(
+    payload: LoginRequest,
+  ): Promise<LoginResponse> {
+    return apiRequest<LoginResponse>(
+      '/auth/login',
+      {
+        method: 'POST',
+        body: JSON.stringify(payload),
+      },
+    );
   },
 };
